@@ -80,18 +80,22 @@ fun obtenerEstadoAlumno(nombre: String, apellido: String, nota: Double): String 
     }else {
         return "El alumno ${nombre} ${apellido} está desaprobado "
     }
-   
 }
 
 // Etapa 3
 fun calcularPromedioCurso(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    val promediocurso = (notas.sum()) / notas.size
+    return promediocurso
 }
 
 fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<String> {
-    // Implementar aquí
-    return emptyList()
+    val aprobados = mutableListOf<String>()
+    for (i in nombres.indices) {
+        if (notas[i] >= 7.0) {
+            aprobados.add(nombres[i])
+        }
+    }
+            return aprobados
 }
 
 // Etapa 4
