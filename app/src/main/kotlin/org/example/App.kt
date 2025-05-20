@@ -100,13 +100,14 @@ fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<St
 
 // Etapa 4
 fun generarBoletin(nombre: String, materias: List<String>, notas: List<Double>): String {
-    var resultado = "Alumno: ${nombre}\n"
+    val resultado = StringBuilder("Alumno: $nombre\n")
     for (i in materias.indices) {
         val estado = if (notas[i] >= 7.0) "aprobado" else "desaprobado"
-        resultado.append "${materias[i]}: ${notas[i]} - ${estado}\n"
+        resultado.append("${materias[i]}: ${notas[i]} - $estado\n")
+    }   
     return resultado.toString()
-    }
 }
+
 
 fun obtenerNotaMasAlta(notas: List<Double>): Double {
     
